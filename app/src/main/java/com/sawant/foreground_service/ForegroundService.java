@@ -74,14 +74,13 @@ public class ForegroundService extends Service {
         PendingIntent nextPendingIntent = PendingIntent.getService(this, 0,
                 nextIntent, 0);
 
-        Bitmap icon = BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher_background);
+//        Bitmap icon = BitmapFactory.decodeResource(getApplicationContext().getResources(), android.R.drawable.btn_star);
 
         Notification notification = new NotificationCompat.Builder(this)
                 .setContentTitle("Sawant Music Player")
                 .setTicker("Sawant Music Player")
                 .setContentText("My Song")
                 .setSmallIcon(R.drawable.ic_launcher_background)
-                .setLargeIcon(Bitmap.createScaledBitmap(icon, 128, 128, false))
                 .setContentIntent(pendingIntent)
                 .setOngoing(true)
                 .addAction(android.R.drawable.ic_media_previous, "Previous", previousPendingIntent)
